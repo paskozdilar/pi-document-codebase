@@ -1,0 +1,13 @@
+{
+  "name": "pi-document-codebase",
+  "version": "0.1.0",
+  "description": "Pi skill for generating practical onboarding documentation for a repository.",
+  "keywords": ["pi-package", "pi-skill", "documentation", "onboarding"],
+  "license": "MIT",
+  "files": [
+    "document-codebase"
+  ],
+  "pi": {
+    "skills": ["./document-codebase"]
+  }
+}
