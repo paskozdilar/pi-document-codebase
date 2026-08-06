@@ -61,7 +61,14 @@ Write only when useful:
 
 6. **Sanity check**
    - Re-read generated docs for contradictions and unsupported claims.
+   - Verify every cited path exists and every command mentioned was actually run or clearly marked unverified.
+   - Avoid absolute claims like "does not exist" unless confirmed with `find`/`ls`.
    - Fix obvious issues.
+
+7. **Dry-run locating-code tasks**
+   - Simulate 3-5 realistic "where is this code?" onboarding questions.
+   - Check that the docs point to the right files/symbols quickly.
+   - If the docs fail this test, revise the docs before finishing.
    - Final response should list written files and the most important remaining gaps.
 
 ## File content requirements
@@ -99,13 +106,15 @@ Write only when useful:
 ### `docs/codebase/gaps.md` (always)
 - Skipped areas and why.
 - Low-confidence claims and what would verify them.
-- Failed commands or missing context.
+- Brief collection limitations only when they affect onboarding accuracy.
 - Best next files to read for highest confidence gain.
+- Prefer user-relevant onboarding unknowns over tool/runtime noise.
 
 ## Confidence rules
 - Don’t claim full coverage unless the repo is truly small and fully inspected.
-- Every major architecture/module claim should cite an evidence path.
+- Every major architecture/module claim should cite an evidence path in `path[:line]` or `path + symbol` form when possible.
 - Unknowns go in `gaps.md`.
+- Prefer explicit verification over inference when a claim affects onboarding navigation.
 
 ## Constraints
 - No custom slash commands.
